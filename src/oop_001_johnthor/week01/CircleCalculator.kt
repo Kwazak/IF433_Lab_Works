@@ -1,8 +1,8 @@
 package oop_001_johnthor.week01
 
-fun main(args: Array<String>) {
-    val radius: Double = 7.0
-    val pi: Double = 3.14
+fun main() {
+    val radius = 7.0
+    val pi = 3.14
 
     val area: Double = pi * radius * radius
 
