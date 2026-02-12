@@ -14,4 +14,8 @@ class Student (
             println("LOG: Objek Student $name berhasil dialokasikan di Memory")
         }
     }
+    // Otomatis mewarisi gpa = 0.0 karena delegasi this() hanya mengirim 3 argumen
+    constructor(name: String, nim: String) : this(name, nim, "Non-Matriculated") {
+        println("LOG: Menggunakan constructor jalur umum (Tanpa Jurusan).")
+    }
 }
