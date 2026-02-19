@@ -3,6 +3,7 @@ package oop_joshua_ivander_hartawan.week03
 fun main() {
     // 1. Membuat objek Weapon
     val myWeapon = Weapon("Golden Jade Cutter ")
+    val player = Player("Joshua")
 
     println("--- Testing Damage Negatif ---")
     // Mencoba set damage ke -50 (Harus gagal & nilai tetap 0 karena nilai awal 0)
@@ -19,4 +20,11 @@ fun main() {
     println("Weapon Name : ${myWeapon.name}")
     println("Final Damage: ${myWeapon.dmg}")
     println("Weapon Tier : ${myWeapon.tier}")
+
+    println("--- Menambah 50 XP ---")
+    player.addXp(50) // Level harusnya tetap 1 (XP 50 < 100)
+
+    println("\n--- Menambah 60 XP ---")
+    player.addXp(60) // Total XP jadi 110, harus muncul pesan "Level Up" ke level 2
+
 }
