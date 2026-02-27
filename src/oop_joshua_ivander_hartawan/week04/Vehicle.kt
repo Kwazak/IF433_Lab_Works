@@ -12,3 +12,10 @@ open class Vehicle(val brand: String) {
         println("BEEP BEEP!")
     }
 }
+
+open class Car(brand: String, val numberOfDoors: Int) : Vehicle(brand) {
+
+    fun openTrunk() {
+        println("Bagasi mobil $brand terbuka dengan $numberOfDoors pintu dibuka.")
+    }
+}
