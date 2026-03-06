@@ -2,8 +2,20 @@ package oop_joshua_ivander_hartawan.week05
 
 
 // LATIHAN 2
+fun main() {
+    val myWallet = EWallet("Joshua E-Wallet", 50000.0)
+    val myCard = CreditCard("Joshua Credit", 100000.0)
 
+    val listPembayaran: List<PaymentMethod> = listOf(myWallet, myCard)
 
+    println("=== PROSES PEMBAYARAN ===")
+    val totalBelanja = 60000.0
+
+    for (metode in listPembayaran) {
+        // Memanggil fungsi abstrak yang sudah di-implementasikan di masing-masing class
+        metode.processPayment(totalBelanja)
+    }
+}
 // LATIHAN 1
 //fun main() {
 //    val helper = MathHelper()
