@@ -9,11 +9,22 @@ fun main() {
     val listPembayaran: List<PaymentMethod> = listOf(myWallet, myCard)
 
     println("=== PROSES PEMBAYARAN ===")
-    val totalBelanja = 60000.0
 
     for (metode in listPembayaran) {
-        // Memanggil fungsi abstrak yang sudah di-implementasikan di masing-masing class
-        metode.processPayment(totalBelanja)
+        println("Memproses akun: ${metode.accountName}")
+
+        metode.processPayment(75000.0)
+
+        if (metode is EWallet) {
+            println("-> Mendeteksi EWallet, melakkan top up otomatis...")
+
+            metode.topUp(50000.0)
+
+            println("-> Mencoba pembayaran ulang setelah top up...")
+            metode.processPayment(75000.0)
+        }
+        println("-----------------------------")
+
     }
 }
 // LATIHAN 1
