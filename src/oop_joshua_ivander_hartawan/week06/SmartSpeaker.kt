@@ -1,9 +1,8 @@
 package oop_joshua_ivander_hartawan.week06
 
-class SmartLamp (
+class SmartSpeaker (
     override val id: String,
     override val name: String,
-
     ) : SmartDevice, Switchable {
     override fun turnOn() {
         println("Speaker $name standby, menunggu perintah suara.")
@@ -14,6 +13,6 @@ class SmartLamp (
     }
 
     fun playMusic(song: String) {
-        println("Memutar lagu dari Spotify melalui $name.")
+        println("Memutar lagu $song dari Spotify melalui $name.")
     }
 }
