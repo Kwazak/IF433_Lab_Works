@@ -25,6 +25,15 @@ fun main() {
     val ezvizGarasi = SmartCCTV("C01", "Ezviz Garasi")
 
 
+    val myHub = SmartHomeHub()
+    myHub.addDevice(lampuTamu)
+    myHub.addDevice(nestDapur)
+    myHub.addDevice(ezvizGarasi)
+
+
+    myHub.activateSecurityMode()
+    myHub.turnOffAllSwitch()
+
 
 }
 
