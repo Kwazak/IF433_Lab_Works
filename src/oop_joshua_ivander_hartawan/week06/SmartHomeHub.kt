@@ -16,7 +16,7 @@ class SmartHomeHub {
             }
         }
     }
-    fun activrSecurityMode() {
+    fun activateSecurityMode() {
         println("\n--- MENGAKTIFKAN MODE KEAMANAN ---")
         for (device in devices) {
 
