@@ -27,5 +27,5 @@ fun main() {
     println("Hasil Copy: $data3")
 
     val (userName, userAge) = data1
-    println("Destructured: $userName berumur $userAge")comm
+    println("Destructured: $userName berumur $userAge")
 }
