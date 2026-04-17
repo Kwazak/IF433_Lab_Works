@@ -23,8 +23,20 @@ class ApiParser {
 
     fun checkout(product: Product) {
         val id = when (product) {
-            is Electronic -> product.id
-            is Clothing -> product.id
+            is Electronic -> {
+                val warrantyLabel = if (product.warrantyMonths == 12) {
+                    "Fallback Warranty ${product.warrantyMonths}"
+                } else {
+                    "Warranty ${product.warrantyMonths}"
+                }
+                println("${product.name} ($warrantyLabel)")
+                product.id
+            }
+
+            is Clothing -> {
+                println("${product.name} (Size ${product.size})")
+                product.id
+            }
         }
 
         val transactionId = JavaPaymentService.processPayment(id)!!
