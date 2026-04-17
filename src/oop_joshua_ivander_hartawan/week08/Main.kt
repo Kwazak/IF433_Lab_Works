@@ -1,5 +1,7 @@
 package oop_joshua_ivander_hartawan.week08
 
+import oop_joshua_ivander_hartawan.week07.ApiResponse
+
 fun main() {
     println("=== TEST SAFE CALLS & ELVIS ===")
     val emptyOrder = Order(null, null)
@@ -41,11 +43,18 @@ fun main() {
 
 
     println("\n=== TEST THE RED BUTTON (!!) ===")
-    val toxicData: String? = null
+//    val toxicData: String? = null
+//    try {
+//        val length = toxicData?.length
+//    } catch (e: NullPointerException) {
+//        println("CRASH (NPE)! Jangan gunakan !! secara sembarangan!")
+//    }
+    val apiResponse: Map<String, String?> = mapOf("Status" to "200", "token" to null)
     try {
-        val length = toxicData?.length
-    } catch (e: NullPointerException) {
-        println("CRASH (NPE)! Jangan gunakan !! secara sembarangan!")
+        val token = requireNotNull(apiResponse["Token"]) {
+            "CRITICAL EXCEPTION: Token Otentikasi tidak ditemukan dari server!"
+        }
+    } catch (e: IllegalArgumentException) {
+        println(e.message)
     }
-
 }
