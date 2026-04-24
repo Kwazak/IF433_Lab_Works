@@ -1,4 +1,4 @@
-package oop_joshua_ivander_hartawan.week09
+"package oop_joshua_ivander_hartawan.week09
 
 fun main() {
     println("=== TEST LIST ===")
@@ -18,4 +18,17 @@ fun main() {
     activeUsers.add("UserC")
     activeUsers.add("UserA") // Duplicate, won't be added
     println("Active Users: $activeUsers")
+
+    println("\n=== TEST MAP ===")
+    val studentGrades = mapOf(
+        "Alice" to "A",
+        "Bob" to "B",
+        "Charlie" to "A"
+    )
+    println("Nilai Bob: ${studentGrades["Bob"]}")
+
+    val inventory = mutableMapOf("Apple" to 50, "Bananas" to 30)
+    inventory["Oranges"] = 20
+    inventory["Apple"] = 45 // Update existing key
+    println("Inventory: $inventory")
 }
