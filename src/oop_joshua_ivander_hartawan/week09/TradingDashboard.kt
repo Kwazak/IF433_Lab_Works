@@ -18,6 +18,13 @@ fun main() {
 
     println("\n=== CLOSED TRADES ===")
     closedTrades.forEach { println(it) }
+
+    val winningTrades = closedTrades
+        .filter { it.roe > 0 }
+
+    println("\n=== WINNING TRADES ===")
+    winningTrades.forEach { println(it) }
 }
+
 
 
