@@ -15,4 +15,13 @@ fun main(){
     println("multiplied by 10: $multiplied")
     println("formatted: $asStrings")
 
+    println("\n=== HOF: SORTED & FOREACH ===")
+    val randomNames = listOf("Charlie", "Alice", "Bob", "David")
+
+    val sortedReverse = randomNames.sortedByDescending { it }
+
+    sortedReverse.forEach { name ->
+        println("User, $name!")
+    }
+
 }
