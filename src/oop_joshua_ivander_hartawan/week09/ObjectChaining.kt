@@ -16,6 +16,5 @@ fun main() {
          .sortedBy { it.name }
          .map { it.name.uppercase() }
 
-    honorNames.forEach { println("Honor Roll: $it")
-
+    honorNames.forEach { println("Honor Roll: $it") }
 }

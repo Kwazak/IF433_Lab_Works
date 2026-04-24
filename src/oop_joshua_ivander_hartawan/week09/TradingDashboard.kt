@@ -12,5 +12,12 @@ fun main() {
 
     println("=== TRADE HISTORY ===")
     tradeHistory.forEach { println(it) }
+
+    val closedTrades = tradeHistory
+        .filter { it.status == "CLOSED" }
+
+    println("\n=== CLOSED TRADES ===")
+    closedTrades.forEach { println(it) }
 }
+
 
