@@ -51,7 +51,10 @@ fun main() {
         .toSet()
 
     println("\n=== UNIQUE TRADING PAIRS ===")
-    uniquePairs.forEach { println(it) }
+    println("Pairs traded: ${uniquePairs.joinToString(", ")}")
+    uniquePairs.forEach { println("  - $it") }
+
+    println("\n=== END OF TRADING REPORT ===")
 }
 
 
