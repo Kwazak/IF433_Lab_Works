@@ -1,4 +1,4 @@
-"package oop_joshua_ivander_hartawan.week09
+package oop_joshua_ivander_hartawan.week09
 
 fun main() {
     println("=== TEST LIST ===")
