@@ -10,6 +10,7 @@ fun main() {
         TradeLog("ETHUSDT", "SHORT", 4, 18.9, "OPEN")
     )
 
+    println("=== CRYPTO TRADING DASHBOARD ===")
     println("=== TRADE HISTORY ===")
     tradeHistory.forEach { println(it) }
 
