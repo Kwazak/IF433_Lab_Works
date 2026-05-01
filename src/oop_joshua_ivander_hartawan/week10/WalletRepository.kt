@@ -11,4 +11,8 @@ class WalletRepository<T>{
         return items.toList()
     }
 
+    fun search(predicate: (T) -> Boolean): List<T> {
+        return items.filter(predicate)
+    }
+
 }
