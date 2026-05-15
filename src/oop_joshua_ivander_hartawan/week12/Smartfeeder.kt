@@ -23,4 +23,20 @@ fun main() {
     var currentKibbleStock = 50
     println("=== SMART PET FEEDER SYSTEM ===")
     println("Stok kibble awal: $currentKibbleStock gr")
+
+    println("\n--- Jadwal Makan Pagi ---")
+    try {
+        val sisaStok = dispenseKibble(
+            requestedGram = 80,
+            availableGram = currentKibbleStock,
+            isJammed = false
+        )
+        currentKibbleStock = sisaStok
+    } catch (e: DispenserJamException) {
+        println("HARDWARE ERROR: ${e.message}")
+    } catch (e: FoodEmptyException) {
+        println("STOK ERROR: ${e.message}")
+    } catch (e: Exception) {
+        println("UNKNOWN ERROR: ${e.message}")
+    }
 }
