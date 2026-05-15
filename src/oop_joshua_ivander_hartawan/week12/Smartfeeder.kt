@@ -17,5 +17,10 @@ fun dispenseKibble(requestedGram: Int, availableGram: Int, isJammed: Boolean): I
 
     return availableGram - requestedGram
 
+}
 
+fun main() {
+    var currentKibbleStock = 50
+    println("=== SMART PET FEEDER SYSTEM ===")
+    println("Stok kibble awal: $currentKibbleStock gr")
 }
