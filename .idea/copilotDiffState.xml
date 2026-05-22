@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/src/oop_joshua_ivander_hartawan/week13/StudentSerialization.kt">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/oop_joshua_ivander_hartawan/week13/StudentSerialization.kt" />
+              <option name="originalContent" value="package oop_joshua_ivander_hartawan.week13&#10;&#10;import java.io.File&#10;import java.io.FileNotFoundException&#10;&#10;data class Student(val name: String, val age: Int, val gpa: Double)&#10;&#10;// Serialization (Object -&gt; CSV)&#10;fun Student.toCsv(): String = &quot;$name,$age,$gpa&quot;&#10;&#10;// Deserialization (CSV -&gt; Object)&#10;fun fromCsv(line: String): Student {&#10;    val parts = line.split(&quot;,&quot;)&#10;    return Student(name = parts[0], age = parts[1].toInt(), gpa = parts[2].toDouble())&#10;}&#10;&#10;fun saveStudents(students: List&lt;Student&gt;, path: String) {&#10;    File(pathname = path).writeText(students.joinToString(separator = &quot;\n&quot;) { it.toCsv() })&#10;}&#10;&#10;fun loadStudents(path: String): List&lt;Student&gt; {&#10;    return try {&#10;        File(pathname = path).readLines().map { fromCsv(line = it) }&#10;    } catch (e: FileNotFoundException) {&#10;        println(&quot;Error: File tidak ditemukan!&quot;)&#10;        emptyList()&#10;    }&#10;}" />
+              <option name="updatedContent" value="package oop_joshua_ivander_hartawan.week13&#10;&#10;import java.io.File&#10;import java.io.FileNotFoundException&#10;&#10;data class Student(val name: String, val age: Int, val gpa: Double)&#10;&#10;// Serialization (Object -&gt; CSV)&#10;fun Student.toCsv(): String = &quot;$name,$age,$gpa&quot;&#10;&#10;// Deserialization (CSV -&gt; Object)&#10;fun fromCsv(line: String): Student {&#10;    val parts = line.split(&quot;,&quot;)&#10;    return Student(name = parts[0], age = parts[1].toInt(), gpa = parts[2].toDouble())&#10;}&#10;&#10;fun saveStudents(students: List&lt;Student&gt;, path: String) {&#10;    File(path).writeText(students.joinToString(separator = &quot;\n&quot;) { it.toCsv() })&#10;}&#10;&#10;fun loadStudents(path: String): List&lt;Student&gt; {&#10;    return try {&#10;        File(path).readLines().map { fromCsv(line = it) }&#10;    } catch (e: FileNotFoundException) {&#10;        println(&quot;Error: File tidak ditemukan!&quot;)&#10;        emptyList()&#10;    }&#10;}" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
