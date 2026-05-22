@@ -69,4 +69,8 @@ fun main() {
     // Simpan ke file CSV
     saveTrades(trades, "crypto_trades.csv")
     println("Trade records disimpan ke crypto_trades.csv")
+
+    // Inject malformed data untuk testing
+    File("crypto_trades.csv").appendText("CORRUPT_ID,DOGEUSDT,Hold,XX,YY\n")
+    println("Malformed data injected untuk testing robustness")
 }
