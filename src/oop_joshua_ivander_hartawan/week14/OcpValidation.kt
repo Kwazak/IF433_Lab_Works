@@ -10,4 +10,5 @@ class DiscountCalculator {
             else -> price
         }
     }
+
 }
