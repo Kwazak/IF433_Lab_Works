@@ -11,3 +11,4 @@ class SimplePrinter : MultifunctionDevice {
     override fun scan(document: String) = throw UnsupportedOperationException("No scanner")
     override fun fax(document: String) = throw UnsupportedOperationException("No fax")
 }
+
