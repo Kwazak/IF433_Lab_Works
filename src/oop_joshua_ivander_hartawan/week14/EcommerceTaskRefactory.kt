@@ -2,6 +2,21 @@ package oop_joshua_ivander_hartawan.week14
 
 import java.io.File
 
+// Interface untuk strategi penghitungan harga (OCP)
+interface PricingStrategy {
+    fun calculate(price: Double): Double
+}
+
+// Implementasi strategi harga untuk pelanggan reguler
+class RegularPricing : PricingStrategy {
+    override fun calculate(price: Double): Double = price
+}
+
+// Implementasi strategi harga untuk pelanggan VIP
+class VipPricing : PricingStrategy {
+    override fun calculate(price: Double): Double = price * 0.90
+}
+
 // Interface untuk menangani penyimpanan data (SRP)
 interface OrderRepository {
     fun saveOrder(itemName: String, finalPrice: Double, customerType: String)
@@ -27,13 +42,9 @@ class SafeOrderProcessor(
     private val repo: OrderRepository,
     private val notifier: NotificationService
 ) {
-    fun processOrder(itemName: String, basePrice: Double, customerType: String) {
-        // Logika penentuan harga (Catatan: Ke depannya ini bisa di-refactor lagi dengan Strategy Pattern untuk OCP)
-        val finalPrice = when (customerType) {
-            "REGULAR" -> basePrice
-            "VIP" -> basePrice * 0.90
-            else -> basePrice
-        }
+    fun processOrder(itemName: String, basePrice: Double, pricingStrategy: PricingStrategy, customerType: String) {
+        // Menggunakan strategy pattern untuk menghitung harga (Sesuai OCP)
+        val finalPrice = pricingStrategy.calculate(basePrice)
 
         println("Memproses pesanan $itemName seharga $finalPrice")
 
